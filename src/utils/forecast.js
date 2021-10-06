@@ -35,7 +35,9 @@ const forecast = (long, lat, callback) => {
         } else if (body.error) {
             callback(`Unable to find location. Search again`, undefined)
         } else {
-            callback(undefined, `It is currrently ${body.current.weather_descriptions[0]}. The temp is ${body.current.temperature} degrees, feeling like ${body.current.feelslike} degrees with the humidex.`)
+            callback(undefined, `It is currrently ${body.current.weather_descriptions[0]}. 
+            The temp is ${body.current.temperature} degrees, feeling like ${body.current.feelslike} degrees, with winds at ${body.current.wind_speed} km, from the ${body.current.wind_dir}.
+            Today's chance of precipitation is ${body.current.precip}%. `)
         }
     })
 }
